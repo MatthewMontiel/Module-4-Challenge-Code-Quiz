@@ -1,8 +1,21 @@
 .time-r {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 #q-card {
-    padding-left: 40rem;
+  padding-left: 40rem;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: fantasy;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: ;
 }
