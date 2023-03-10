@@ -22,56 +22,56 @@ let scoresArea = document.getElementById("scores-area");
 let quizQuestions = [
   {
     question: "JavaScript is an _____ language?",
-    choices1: "Object-Oriented",
-    choices2: "Object-Based",
-    choices3: "Procedural",
-    choices4: "None of the above",
-    answer: 1,
+    answer1: "Object-Oriented",
+    answer2: "Object-Based",
+    answer3: "Procedural",
+    answer4: "None of the above",
+    answer: "Object-Oriented",
   },
   {
     question:
       "Which of the following keywords is used to define a variable in JavaScript",
-    choices1: "var",
-    choices2: "let",
-    choices3: "Both A and B",
-    choices4: "None of the above",
-    answer: 3,
+    answer1: "var",
+    answer2: "let",
+    answer3: "Both A and B",
+    answer4: "None of the above",
+    answer: "Both A and B",
   },
   {
     question:
       "Which of the following methods is used to access HTML elements using JavaScript?",
-    choices1: "getElementbyId()",
-    choices2: "getElementsByClassName",
-    choices3: "Both A and B",
-    choices4: "None of the above",
-    answer: 3,
+    answer1: "getElementbyId()",
+    answer2: "getElementsByClassName",
+    answer3: "Both A and B",
+    answer4: "None of the above",
+    answer: "Both A and B",
   },
   {
     question:
       "Upon encountering empty statements, what does teh JavaScript interpreter do?",
-    choices1: "Throws an error",
-    choices2: "Ignores the statements",
-    choices3: "Gives a warning",
-    choices4: "None of the above",
-    answer: 2,
+    answer1: "Throws an error",
+    answer2: "Ignores the statements",
+    answer3: "Gives a warning",
+    answer4: "None of the above",
+    answer: "Ignores the statements",
   },
   {
     question:
       "Which of the following methods can be used to display data in some form using JavaScript?",
-    choice1: "document.write()",
-    choice2: "console.log()",
-    choice3: "window.alert()",
-    choice4: "All of the above",
-    answer: 1,
+    answer1: "document.write()",
+    answer2: "console.log()",
+    answer3: "window.alert()",
+    answer4: "All of the above",
+    answer: "document.write()",
   },
 ];
 
 let current = 0;
 let Q = quizQuestions[current].question;
-let c1 = quizQuestions[current].ans1;
-let c2 = quizQuestions[current].ans2;
-let c3 = quizQuestions[current].ans3;
-let c4 = quizQuestions[current].ans4;
+let C1 = quizQuestions[current].answer1;
+let C2 = quizQuestions[current].answer2;
+let C3 = quizQuestions[current].answer3;
+let C4 = quizQuestions[current].answer4;
 
 showInIt();
 
@@ -110,14 +110,14 @@ function showQuiz() {
   timeEl.textContent = secondsLeft;
   initEL.classList.toggle("hide");
   qArea.innerHTML = Q;
-  choices1.innerHTML = c1;
-  choices2.innerHTML = c2;
-  choices3.innerHTML = c3;
-  choices4.innerHTML = c4;
+  choices1.innerHTML = C1;
+  choices2.innerHTML = C2;
+  choices3.innerHTML = C3;
+  choices4.innerHTML = C4;
 }
-
+aArea.addEventListener("click", check);
 function check(event) {
-  let right = quizQuestions.answer;
+  let right = quizQuestions[current].answer;
   if (event.target.textContent == right) {
     next();
     feedback.innerHTML = "One more Stone to add to the collection";
@@ -156,17 +156,17 @@ function next() {
   hideFeedback();
 
   if (current < 5) {
-    let Q = questions[current].question;
-    let c1 = questions[current].ans1;
-    let c2 = questions[current].ans2;
-    let c3 = questions[current].ans3;
-    let c4 = questions[current].ans4;
+    let Q = quizQuestions[current].question;
+    let C1 = quizQuestions[current].answer1;
+    let C2 = quizQuestions[current].answer2;
+    let C3 = quizQuestions[current].answer3;
+    let C4 = quizQuestions[current].answer4;
 
     qArea.innerHTML = Q;
-    choices1.innerHTML = c1;
-    choices2.innerHTML = c2;
-    choices3.innerHTML = c3;
-    choices4.innerHTML = c4;
+    choices1.innerHTML = C1;
+    choices2.innerHTML = C2;
+    choices3.innerHTML = C3;
+    choices4.innerHTML = C4;
   } else {
     endQuiz();
   }
