@@ -1,14 +1,14 @@
-let startBtn = document.querySelector("start");
-let timeEl = document.querySelector(".time");
+let startBtn = document.querySelector("#start");
+let timeEl = document.querySelector("#time");
 let mainEl = document.getElementById("q-card");
 let initEL = document.getElementById("init");
 let qArea = document.getElementById("q-area");
 let aArea = document.getElementById("a-area");
 let secondsLeft = 60;
-let choice1 = document.getElementById("c1");
-let choice2 = document.getElementById("c2");
-let choice3 = document.getElementById("c3");
-let choice4 = document.getElementById("c4");
+let choices1 = document.getElementById("c1");
+let choices2 = document.getElementById("c2");
+let choices3 = document.getElementById("c3");
+let choices4 = document.getElementById("c4");
 let form = document.getElementById("form");
 let choice = document.querySelectorAll(".choices");
 let feedback = document.getElementById("feedback");
@@ -22,37 +22,37 @@ let scoresArea = document.getElementById("scores-area");
 let quizQuestions = [
   {
     question: "JavaScript is an _____ language?",
-    choice1: "Object-Oriented",
-    choice2: "Object-Based",
-    choice3: "Procedural",
-    choice4: "None of the above",
+    choices1: "Object-Oriented",
+    choices2: "Object-Based",
+    choices3: "Procedural",
+    choices4: "None of the above",
     answer: 1,
   },
   {
     question:
       "Which of the following keywords is used to define a variable in JavaScript",
-    choice1: "var",
-    choice2: "let",
-    choice3: "Both A and B",
-    choice4: "None of the above",
+    choices1: "var",
+    choices2: "let",
+    choices3: "Both A and B",
+    choices4: "None of the above",
     answer: 3,
   },
   {
     question:
       "Which of the following methods is used to access HTML elements using JavaScript?",
-    choice1: "getElementbyId()",
-    choice2: "getElementsByClassName",
-    choice3: "Both A and B",
-    choice4: "None of the above",
+    choices1: "getElementbyId()",
+    choices2: "getElementsByClassName",
+    choices3: "Both A and B",
+    choices4: "None of the above",
     answer: 3,
   },
   {
     question:
       "Upon encountering empty statements, what does teh JavaScript interpreter do?",
-    choice1: "Throws an error",
-    choice2: "Ignores the statements",
-    choice3: "Gives a warning",
-    choice4: "None of the above",
+    choices1: "Throws an error",
+    choices2: "Ignores the statements",
+    choices3: "Gives a warning",
+    choices4: "None of the above",
     answer: 2,
   },
   {
@@ -68,10 +68,10 @@ let quizQuestions = [
 
 let current = 0;
 let Q = quizQuestions[current].question;
-let C1 = quizQuestions[current].ans1;
-let C2 = quizQuestions[current].ans2;
-let C3 = quizQuestions[current].ans3;
-let C4 = quizQuestions[current].ans4;
+let c1 = quizQuestions[current].ans1;
+let c2 = quizQuestions[current].ans2;
+let c3 = quizQuestions[current].ans3;
+let c4 = quizQuestions[current].ans4;
 
 showInIt();
 
@@ -93,7 +93,7 @@ function setTime() {
   }, 1000);
 }
 
-startBtn.addEventListener("click", function() {
+startBtn.addEventListener("click", function () {
   setTime();
   showQuiz();
 });
@@ -110,13 +110,11 @@ function showQuiz() {
   timeEl.textContent = secondsLeft;
   initEL.classList.toggle("hide");
   qArea.innerHTML = Q;
-  c1btn.innerHTML = C1;
-  c2btn.innerHTML = C2;
-  c3btn.innerHTML = C3;
-  c4btn.innerHTML = C4;
+  choices1.innerHTML = c1;
+  choices2.innerHTML = c2;
+  choices3.innerHTML = c3;
+  choices4.innerHTML = c4;
 }
-
-
 
 function check(event) {
   let right = quizQuestions.answer;
@@ -159,16 +157,16 @@ function next() {
 
   if (current < 5) {
     let Q = questions[current].question;
-    let C1 = questions[current].ans1;
-    let C2 = questions[current].ans2;
-    let C3 = questions[current].ans3;
+    let c1 = questions[current].ans1;
+    let c2 = questions[current].ans2;
+    let c3 = questions[current].ans3;
     let c4 = questions[current].ans4;
 
     qArea.innerHTML = Q;
-    c1btn.innerHTML = C1;
-    c2btn.innerHTML = C2;
-    c3btn.innerHTML = C3;
-    c4btn.innerHTML = C4;
+    choices1.innerHTML = c1;
+    choices2.innerHTML = c2;
+    choices3.innerHTML = c3;
+    choices4.innerHTML = c4;
   } else {
     endQuiz();
   }
@@ -181,4 +179,3 @@ function endQuiz() {
   form.classList.toggle("hide");
   timeEl.classList.toggle("hide");
 }
-
