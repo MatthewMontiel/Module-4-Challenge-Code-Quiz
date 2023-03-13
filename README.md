@@ -12,11 +12,17 @@ The main purpose of this project was to create a JavaScript quiz that would allo
 N/A
 
 ## Usage
+Link to live site
+https://matthewmontiel.github.io/Module-4-Challenge-Code-Quiz/
+
 When you click the generate password button you will then be asked a series of questions. Based on those questions you will add criteria to the generator and it will then create a password for you. 
+
+![Screenshot 2023-03-13 at 3 39 03 PM](https://user-images.githubusercontent.com/120674910/224826943-e8932628-79b0-486b-a2d5-9fa5a778253a.png)
+
 
 ## Credits
 
-Danny in my class Helped me with some of my code on my project.
+Danny Cohen in my class Helped me with some of my code on my project.
 
 ## License
 
